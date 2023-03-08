@@ -50,6 +50,7 @@ function Home() {
             </Nav.Item>
           </Nav>
           </div>
+          Contenido de cursos
         </div>
       </div>
     </div>
