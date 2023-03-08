@@ -1,4 +1,5 @@
 import { Button, Nav } from 'react-bootstrap'
+import CourseTab from '../../components/CourseTab/CourseTab'
 import style from '../Home/Home.module.scss'
 
 
@@ -28,7 +29,7 @@ function Home() {
           </p>
         </div>
         <div>
-          <div>
+          <div className='mb-5'>
           <Nav fill variant="tabs" defaultActiveKey="/home">
             <Nav.Item>
               <Nav.Link href="/home">Web Development</Nav.Link>
@@ -50,7 +51,7 @@ function Home() {
             </Nav.Item>
           </Nav>
           </div>
-          Contenido de cursos
+          <CourseTab />
         </div>
       </div>
     </div>
