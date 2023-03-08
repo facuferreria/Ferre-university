@@ -1,0 +1,41 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &_title{
+        width: 1024px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    &_topCourses{
+        margin: 300px auto;
+    }
+}
+
+.title{
+    line-height: 70px;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 100px auto 25px auto;
+}
+
+.subtitle{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+
+.text{
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 50px;
+}

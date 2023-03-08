@@ -1,0 +1,15 @@
+$primary-color: #2a344a;
+$secondary-color: #f4f4f4;
+$third-color: #CBB26B;
+
+//PUBLIC CLASSES
+
+.carousel-control-next, .carousel-control-prev{
+    width: 5%;
+    opacity: 100%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}

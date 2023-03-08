@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img{
+    width: 100%;
+    height: 380px;
+}
+
+.billboard{
+    max-width: 40rem;
+    background-color: #f4f4f4;
+    color: #242424;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    padding: 2.4rem;
+}

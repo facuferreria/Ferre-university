@@ -1,0 +1,65 @@
+[
+    {
+        "id": 0,
+        "name":"Javascript Basico",
+        "description": "Este es el primer curso de Javascript donde vas a aprender sobre los conceptos basicos",
+        "image": "./assets/js.png",
+        "type": ["javascript", "webdevelopment"],
+        "price": 15999
+         
+    },
+    {
+        "id": 0,
+        "name":"HTML de 0 a Sr",
+        "description": "Este es el primer curso de Javascript donde vas a aprender sobre los conceptos basicos",
+        "image": "./assets/js.png",
+        "type": ["javascript", "webdevelopment"],
+        "price": 15999
+         
+    },
+    {
+        "id": 0,
+        "name":"CSS de 0 a Sr",
+        "description": "Este es el primer curso de Javascript donde vas a aprender sobre los conceptos basicos",
+        "image": "./assets/js.png",
+        "type": ["javascript", "webdevelopment"],
+        "price": 15999
+         
+    },
+    {
+        "id": 0,
+        "name":"ReactJS",
+        "description": "Este es el primer curso de Javascript donde vas a aprender sobre los conceptos basicos",
+        "image": "./assets/js.png",
+        "type": ["javascript", "webdevelopment"],
+        "price": 15999
+         
+    },
+    {
+        "id": 0,
+        "name":"Angular",
+        "description": "Este es el primer curso de Javascript donde vas a aprender sobre los conceptos basicos",
+        "image": "./assets/js.png",
+        "type": ["javascript", "webdevelopment"],
+        "price": 15999
+         
+    },
+    {
+        "id": 0,
+        "name":"VueJS",
+        "description": "Este es el primer curso de Javascript donde vas a aprender sobre los conceptos basicos",
+        "image": "./assets/js.png",
+        "type": ["javascript", "webdevelopment"],
+        "price": 15999
+         
+    },
+    {
+        "id": 0,
+        "name":"NodeJS + ExpressJS",
+        "description": "Este es el primer curso de Javascript donde vas a aprender sobre los conceptos basicos",
+        "image": "./assets/js.png",
+        "type": ["javascript", "webdevelopment"],
+        "price": 15999
+         
+    }
+]
