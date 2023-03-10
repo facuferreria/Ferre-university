@@ -1,4 +1,4 @@
-import { Button, Nav } from 'react-bootstrap'
+import { Button, Nav, Tab, Tabs } from 'react-bootstrap'
 import CourseTab from '../../components/CourseTab/CourseTab'
 import style from '../Home/Home.module.scss'
 
@@ -25,33 +25,33 @@ function Home() {
           </h2>
           <p className={style.text}>
             En Ferre University tenemos el objetivo de formar a los siguientes lideres mundiales con las
-            habilidades mas reclamadas por el mercado.
+            habilidades mas reclamadas por el mercado. Por eso te mostramos los mejores cursos hechos ni mas ni menos
+            que por profesionales experimentados en el rubro.
           </p>
         </div>
         <div>
           <div className='mb-5'>
-          <Nav fill variant="tabs" defaultActiveKey="/home">
-            <Nav.Item>
-              <Nav.Link href="/home">Web Development</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-1">Javascript</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-2">Microsoft Office</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-3">Marketing digital</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-4">Python</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-5">Ciberseguridad</Nav.Link>
-            </Nav.Item>
-          </Nav>
+          <Tabs defaultActiveKey="web-development">
+            <Tab eventKey="web-development" title="Web Development">
+              <CourseTab type="webdevelopment"/>
+            </Tab>
+            <Tab eventKey="javascript" title="Javascript">
+              <CourseTab type="javascript"/>
+            </Tab>
+            <Tab eventKey="python" title="Python">
+              <CourseTab type="python"/>
+            </Tab>
+            <Tab eventKey="cibersecurity" title="Cibersecurity">
+              <CourseTab type="cibersecurity"/>
+            </Tab>
+            <Tab eventKey="office" title="Microsoft Office">
+              <CourseTab type="office"/>
+            </Tab>
+            <Tab eventKey="blockchain" title="Blockchain & Fintech">
+              <CourseTab type="blockchain"/>
+            </Tab>
+          </Tabs>
           </div>
-          <CourseTab />
         </div>
       </div>
     </div>

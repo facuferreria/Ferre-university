@@ -10,7 +10,7 @@ interface CourseProps {
 
 function CourseCard({ name, description, image, type }: CourseProps) {
   return (
-    <Card bg="dark" style={{ width: '18rem' }}>
+    <Card bg="dark" style={{ width: '18rem', height: '372px' }}>
       <Card.Img variant="top" src={image} height="180px" alt="curso" />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
