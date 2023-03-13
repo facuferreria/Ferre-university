@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import courses from '../../courses.json'
 import CourseCard from '../CourseCard/CourseCard'
+import style from '../CourseTab/CourseTab.module.scss'
 
 interface CourseType {
   type: string;
@@ -9,8 +10,8 @@ interface CourseType {
 
 const CourseTab: React.FC<CourseType> = ({type}) => {
   return (
-    <div>
-        <Row md={2} xs={1} lg={3} className='g-3'>
+    <div className={style.container}>
+        <Row md={2} xs={1} lg={3} className='g-5'>
             {
               courses
               .filter(item => item?.type.includes(type))

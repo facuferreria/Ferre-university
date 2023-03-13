@@ -1,6 +1,6 @@
 $primary-color: #2a344a;
 $secondary-color: #f4f4f4;
-$third-color: #CBB26B;
+$third-color: #ffc107;
 
 //PUBLIC CLASSES
 
@@ -12,4 +12,32 @@ $third-color: #CBB26B;
 .carousel-control-next-icon, .carousel-control-prev-icon{
     width: 1.5rem;
     height: 1.5rem;
+}
+
+.nav-tabs {
+
+    border-bottom: 1px solid $third-color !important;
+  
+    & .nav-link{
+        color: $third-color;
+  
+        &:hover{
+            color: $third-color;
+            border: 1px solid $third-color !important;
+        }
+  
+        &.active{
+            background-color: $third-color !important;
+            color: $primary-color !important;
+            border-color:$third-color !important;
+        }
+    }
+}
+  
+
+.list-group-item{
+    padding: 24px 0 !important;
+    background-color: $primary-color !important;
+    color: $secondary-color !important;
+    border-bottom: 1px solid $secondary-color !important;
 }

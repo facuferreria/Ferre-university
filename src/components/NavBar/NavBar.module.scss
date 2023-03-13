@@ -1,4 +1,10 @@
+@import '../../config.scss';
+
 .nav{
     width: 100%;
     justify-content: space-around;
+}
+
+.cart{
+    color: $secondary-color;
 }
