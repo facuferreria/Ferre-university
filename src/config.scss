@@ -33,11 +33,14 @@ $third-color: #ffc107;
         }
     }
 }
-  
 
 .list-group-item{
-    padding: 24px 0 !important;
+    padding: 16px 5px !important;
     background-color: $primary-color !important;
     color: $secondary-color !important;
     border-bottom: 1px solid $secondary-color !important;
+}
+
+.Mui-checked{
+    color: $third-color;
 }

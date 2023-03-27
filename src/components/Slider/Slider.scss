@@ -1,0 +1,30 @@
+@import '../../config.scss';
+
+.MuiSlider-root {
+    height: 8px;
+  
+    .MuiSlider-rail {
+      background-color: gray;
+    }
+  
+    .MuiSlider-track {
+      background-color: $third-color;
+      border: 1px solid $secondary-color;
+    }
+  
+    .MuiSlider-thumb {
+      background-color: $secondary-color;
+      border: 3px solid $third-color;
+      height: 20px;
+      width: 20px;
+  
+      &:hover,
+      &:active {
+        box-shadow: 0 0 0 8px #ffc10794;
+      }
+    }
+
+    .MuiSlider-markLabel{
+        color: $secondary-color;
+    }
+  }

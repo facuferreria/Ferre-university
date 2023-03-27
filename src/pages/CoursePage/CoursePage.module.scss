@@ -8,6 +8,15 @@
         width: 30%;
         padding: 50px 25px;
     }
+
+    &_slider{
+        margin: 25px 0 25px 10px;
+    }
+
+    &_options{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .title{
