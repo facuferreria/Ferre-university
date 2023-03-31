@@ -1,0 +1,32 @@
+@import '../../config.scss';
+
+.MuiAccordion-root {
+    box-shadow: none !important; 
+
+    .MuiAccordionSummary{
+        &-root{
+            background-color: $primary-color; 
+            color: $secondary-color;
+            padding: 0;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        &-expandIconWrapper{
+            color: $secondary-color;
+        }
+    }
+    
+    &.Mui-expanded {
+        .MuiAccordionSummary-root,
+        .MuiAccordionDetails-root{
+            box-shadow: none;
+            background-color: $primary-color; 
+            color: $secondary-color;
+        }
+    }
+}
+
+.MuiAccordionDetails-root {
+    background-color: $primary-color;
+    color: $secondary-color;
+}

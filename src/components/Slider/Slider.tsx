@@ -8,16 +8,14 @@ const marks = [
       label: '$7000',
     },
     {
-        value: 10500,
-        label: '$10500',
+      value: 10500,
+       
     },
     {
         value: 14000,
-        label: '$14000',
     },
     {
         value: 21000,
-        label: '$21000',
     },
     {
       value: 28000,

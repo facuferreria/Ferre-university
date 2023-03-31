@@ -5,7 +5,7 @@ import CourseCard from '../CourseCard/CourseCard'
 import style from '../CourseTab/CourseTab.module.scss'
 
 interface CourseType {
-  type: string;
+  type: string; 
 }
 
 const CourseTab: React.FC<CourseType> = ({type}) => {

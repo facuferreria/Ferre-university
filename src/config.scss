@@ -4,16 +4,6 @@ $third-color: #ffc107;
 
 //PUBLIC CLASSES
 
-.carousel-control-next, .carousel-control-prev{
-    width: 5%;
-    opacity: 100%;
-}
-
-.carousel-control-next-icon, .carousel-control-prev-icon{
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
 .nav-tabs {
 
     border-bottom: 1px solid $third-color !important;
@@ -35,12 +25,8 @@ $third-color: #ffc107;
 }
 
 .list-group-item{
-    padding: 16px 5px !important;
+    padding: 0 5px !important;
     background-color: $primary-color !important;
     color: $secondary-color !important;
     border-bottom: 1px solid $secondary-color !important;
-}
-
-.Mui-checked{
-    color: $third-color;
 }

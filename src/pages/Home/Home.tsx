@@ -33,7 +33,7 @@ function Home() {
           <div className='mb-5'>
           <Tabs defaultActiveKey="web-development">
             <Tab eventKey="web-development" title="Web Development">
-              <CourseTab type="webdevelopment"/>
+              <CourseTab type="web development"/>
             </Tab>
             <Tab eventKey="javascript" title="Javascript">
               <CourseTab type="javascript"/>

@@ -1,63 +1,93 @@
-import { Radio, RadioGroup } from "@mui/material"
-import Checkbox from "@mui/material/Checkbox"
-import FormControlLabel from "@mui/material/FormControlLabel"
-import Rating from "@mui/material/Rating"
-import { Button, FormGroup, ListGroup } from "react-bootstrap"
-import Slider from "../../components/Slider/Slider"
+import FilterForm from "../../components/FilterForm/FilterForm"
+import FiltersSideBar from "../../components/FiltersSideBar/FiltersSideBar"
 import style from '../CoursePage/CoursePage.module.scss'
+import { useState } from "react"
+import { ListGroup, Button, Row } from "react-bootstrap"
+import Slider from "../../components/Slider/Slider"
+import CourseTab from "../../components/CourseTab/CourseTab"
 
 
 function CoursePage() {
-  return (
-    <div className={style.container}>
-        <div className={style.container_filter}>
-            <ListGroup variant="flush">
-                <ListGroup.Item>
-                    <Button size="lg" variant="warning">Filtrar</Button>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <h4 className={style.title}>Precio</h4>
-                    <div className={style.container_slider}>
-                        <Slider />
-                    </div>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <h4 className={style.title}>Categoria</h4>
-                    <FormGroup className={style.container_options}>
-                        <FormControlLabel control={<Checkbox defaultChecked/>} label="All" />
-                        <FormControlLabel control={<Checkbox />} label="Web Development" />
-                        <FormControlLabel control={<Checkbox />} label="Javascript" />
-                        <FormControlLabel control={<Checkbox />} label="Python" />
-                        <FormControlLabel control={<Checkbox />} label="Cibersecurity" />
-                        <FormControlLabel control={<Checkbox />} label="Office" />
-                        <FormControlLabel control={<Checkbox />} label="Blockchain & Fintech" />
-                    </FormGroup>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <h4 className={style.title}>Popularidad</h4>
-                    <FormGroup className={style.container_options}>
-                        <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="+4.0"
-                            name="radio-buttons-group"
-                        >
-                            <FormControlLabel value="+4.0" control={<Radio />} label={<Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />} />
-                            <FormControlLabel value="+3.5" control={<Radio />} label={<Rating name="half-rating-read" defaultValue={4.0} precision={0.5} readOnly />} />
-                            <FormControlLabel value="+3.0" control={<Radio />} label={<Rating name="half-rating-read" defaultValue={3.5} precision={0.5} readOnly />} />
-                            <FormControlLabel value="+2.5" control={<Radio />} label={<Rating name="half-rating-read" defaultValue={3.0} precision={0.5} readOnly />} />
-                            <FormControlLabel value="+2.0" control={<Radio />} label={<Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />} />
-                        </RadioGroup>
-                    </FormGroup>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <h4 className={style.title}>Grabacion</h4>
-                </ListGroup.Item>
-            </ListGroup>
+
+    const popularityOptions = ["4.5 estrellas o mas", "3.5 estrellas o mas", "2.5 estrellas o mas", "1.5 estrellas o mas"];
+    const categoryOptions = ["All", "Web Development", "Javascript", "Python", "Cibersecurity", "Office", "Blockchain"];
+    const recordingOptions = ["All", "In Live", "Recorded"];
+    const [selectedRadioOption, setSelectedRadioOption] = useState("");
+    const [selectedCheckOptions, setSelectedCheckOptions] = useState<string[]>([]);
+
+    const handleRadioOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSelectedRadioOption(event.target.value);
+    };
+
+    const handleCheckOptionsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const optionValue = event.target.value;
+        if (selectedCheckOptions.includes(optionValue)) {
+        setSelectedCheckOptions(selectedCheckOptions.filter((option) => option !== optionValue));
+        } else {
+        setSelectedCheckOptions([...selectedCheckOptions, optionValue]);
+        }
+    };
+
+    return (
+        <div className={style.container}>
+            <div className={style.container_filter}>
+                <ListGroup variant="flush">
+                    <ListGroup.Item>
+                        <Button className={style.button} size="lg" variant="warning">Filtrar</Button>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <FiltersSideBar 
+                            title="Precio"
+                            FilterComponent={<Slider />}
+                        />
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <FiltersSideBar 
+                            title="Popoularidad"
+                            FilterComponent={
+                                <FilterForm 
+                                    options={popularityOptions}
+                                    selectedOption={selectedRadioOption}
+                                    onChange={handleRadioOptionChange}
+                                    isCheckboxForm={false}
+                                />
+                            }
+                        />
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        <FiltersSideBar 
+                            title="Categoria"
+                            FilterComponent={
+                                <FilterForm 
+                                    options={categoryOptions}
+                                    selectedOption={""}
+                                    onChange={handleCheckOptionsChange}
+                                    isCheckboxForm={true}
+                                />
+                            }
+                        />
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                    <FiltersSideBar 
+                            title="Grabacion"
+                            FilterComponent={
+                                <FilterForm 
+                                    options={recordingOptions}
+                                    selectedOption={""}
+                                    onChange={handleCheckOptionsChange}
+                                    isCheckboxForm={true}
+                                />
+                            }
+                        />
+                    </ListGroup.Item>
+                </ListGroup>
+            </div>
+            <div className={`${style.container_course}`}>
+                <Row md={2} xs={1} lg={3} className='g-3'>
+                    <CourseTab type="all"/>
+                </Row>
+            </div>
         </div>
-        <div>
-            Cursos por aca
-        </div>
-    </div>
   )
 }
 

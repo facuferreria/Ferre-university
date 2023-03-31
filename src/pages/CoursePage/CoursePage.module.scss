@@ -1,11 +1,11 @@
 .container{
-    width: 100%;
+    width: 100%; 
     display: flex;
     flex-direction: row;
     margin: 0 auto;
 
     &_filter{
-        width: 30%;
+        width: 20%;
         padding: 50px 25px;
     }
 
@@ -17,8 +17,17 @@
         display: flex;
         flex-direction: column;
     }
+
+    &_course{
+        width: 80%;
+        padding: 50px 25px;
+    }
 }
 
 .title{
     margin: 0;
+}
+
+.button{
+    margin-bottom: 16px;
 }
