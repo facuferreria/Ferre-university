@@ -4,36 +4,42 @@ import style from '../CoursePage/CoursePage.module.scss'
 import { useState } from "react"
 import { ListGroup, Button, Row } from "react-bootstrap"
 import Slider from "../../components/Slider/Slider"
-import CourseTab from "../../components/CourseTab/CourseTab"
+import CourseList from "../../components/CourseList/CourseList"
+import { useFilters } from "../../context/FilterContext"
 
 
 function CoursePage() {
 
-    const popularityOptions = ["4.5 estrellas o mas", "3.5 estrellas o mas", "2.5 estrellas o mas", "1.5 estrellas o mas"];
+    const popularityOptions = ["4.5", "3.5", "2.5", "1.5"];
     const categoryOptions = ["All", "Web Development", "Javascript", "Python", "Cibersecurity", "Office", "Blockchain"];
     const recordingOptions = ["All", "In Live", "Recorded"];
-    const [selectedRadioOption, setSelectedRadioOption] = useState("");
-    const [selectedCheckOptions, setSelectedCheckOptions] = useState<string[]>([]);
+    const [radioOption, setSelectedRadioOption] = useState("");
+    const [checkedOptions, setSelectedCheckOptions] = useState<string[]>([]);
+    const {price, filterByPopularity} = useFilters();
 
     const handleRadioOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSelectedRadioOption(event.target.value);
+        filterByPopularity(parseFloat(event.target.value));
     };
 
     const handleCheckOptionsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const optionValue = event.target.value;
-        if (selectedCheckOptions.includes(optionValue)) {
-        setSelectedCheckOptions(selectedCheckOptions.filter((option) => option !== optionValue));
-        } else {
-        setSelectedCheckOptions([...selectedCheckOptions, optionValue]);
-        }
+        setSelectedCheckOptions({
+            ...checkedOptions,
+            [event.target.name]: event.target.checked,
+        });
     };
+
+    const setFilters = () => {}
+
+    console.log(checkedOptions, radioOption);
+    
 
     return (
         <div className={style.container}>
             <div className={style.container_filter}>
                 <ListGroup variant="flush">
                     <ListGroup.Item>
-                        <Button className={style.button} size="lg" variant="warning">Filtrar</Button>
+                        <Button className={style.button} size="lg" variant="warning" onClick={() => setFilters()}>Filtrar</Button>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <FiltersSideBar 
@@ -47,7 +53,7 @@ function CoursePage() {
                             FilterComponent={
                                 <FilterForm 
                                     options={popularityOptions}
-                                    selectedOption={selectedRadioOption}
+                                    selectedOption={radioOption}
                                     onChange={handleRadioOptionChange}
                                     isCheckboxForm={false}
                                 />
@@ -84,7 +90,7 @@ function CoursePage() {
             </div>
             <div className={`${style.container_course}`}>
                 <Row md={2} xs={1} lg={3} className='g-3'>
-                    <CourseTab type="all"/>
+                    <CourseList courses={price}/>
                 </Row>
             </div>
         </div>

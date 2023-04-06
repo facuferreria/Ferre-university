@@ -1,5 +1,5 @@
-import { Button, Nav, Tab, Tabs } from 'react-bootstrap'
-import CourseTab from '../../components/CourseTab/CourseTab'
+import { Button, Tab, Tabs } from 'react-bootstrap'
+import TopCourses from '../../components/TopCourses/TopCourses'
 import style from '../Home/Home.module.scss'
 
 
@@ -33,22 +33,22 @@ function Home() {
           <div className='mb-5'>
           <Tabs defaultActiveKey="web-development">
             <Tab eventKey="web-development" title="Web Development">
-              <CourseTab type="web development"/>
+              <TopCourses type="web development"/>
             </Tab>
             <Tab eventKey="javascript" title="Javascript">
-              <CourseTab type="javascript"/>
+              <TopCourses type="javascript"/>
             </Tab>
             <Tab eventKey="python" title="Python">
-              <CourseTab type="python"/>
+              <TopCourses type="python"/>
             </Tab>
             <Tab eventKey="cibersecurity" title="Cibersecurity">
-              <CourseTab type="cibersecurity"/>
+              <TopCourses type="cibersecurity"/>
             </Tab>
             <Tab eventKey="office" title="Microsoft Office">
-              <CourseTab type="office"/>
+              <TopCourses type="office"/>
             </Tab>
             <Tab eventKey="blockchain" title="Blockchain & Fintech">
-              <CourseTab type="blockchain"/>
+              <TopCourses type="blockchain"/>
             </Tab>
           </Tabs>
           </div>

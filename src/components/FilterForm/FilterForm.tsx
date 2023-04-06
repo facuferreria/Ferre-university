@@ -3,7 +3,7 @@ import { FormControlLabel, Checkbox, Radio, RadioGroup, FormGroup } from "@mui/m
 
 interface FormProps {
   options: string[];
-  selectedOption: string;
+  selectedOption: string; 
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isCheckboxForm: boolean;
 }
